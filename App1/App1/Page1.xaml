@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.Page1">
+    <ContentPage.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="20"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="TextColor" Value="White"/>
+        </Style>
+    </ContentPage.Resources>
+    <StackLayout Orientation="Vertical" BackgroundColor="Black">
+        <Button Text="Начальное меню" BackgroundColor="#360E56"
+                VerticalOptions="Start"
+                Margin="0"/>
+        <Frame BackgroundColor="White" Margin="20"
+               HeightRequest="350"
+               Padding="0">
+            
+        </Frame>
+        <Frame CornerRadius="11" BackgroundColor="#360E56"
+               Margin="50, 20" Padding="1">
+            <Entry BackgroundColor="#360E56" TextColor="White"
+               FontSize="20" HorizontalTextAlignment="Center"/>
+        </Frame>
+        <Button BackgroundColor="#360E56" Text="Подтвердить"
+                VerticalOptions="EndAndExpand" Margin="0"/>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.MainPage">
+    <ContentPage.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="20"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="TextColor" Value="White"/>
+        </Style>
+    </ContentPage.Resources>
+    <StackLayout BackgroundColor="Black" Orientation="Vertical"
+                 VerticalOptions="Fill">
+        <Button BackgroundColor="#360E56"
+                Text="Пользователь"
+                CornerRadius="50"
+                Clicked="Button_Clicked"/>
+        <Button BackgroundColor="#4A0707"
+                Text="Аниме"
+                CornerRadius="20" HeightRequest="130"/>
+        <Button BackgroundColor="#562205"
+                Text="Манга"
+                CornerRadius="20" HeightRequest="130"/>
+        <Button BackgroundColor="#09364F"
+                Text="Книги"
+                CornerRadius="20" HeightRequest="130"/>
+        <Button BackgroundColor="#360E56" Text="Настройки"
+                FontSize="20" TextColor="White"
+                VerticalOptions="EndAndExpand"
+                Margin="0"/>
+    </StackLayout>
+</ContentPage>
