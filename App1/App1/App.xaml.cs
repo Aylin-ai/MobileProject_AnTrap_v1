@@ -1,4 +1,5 @@
-﻿using System;
+﻿using App1.Views_Окна_.Windows;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 

@@ -22,7 +22,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Page1.xaml">
+    <Folder Include="Data%28Связь с бд%29\" />
+    <Folder Include="Models%28Бизнес-логика%29\" />
+    <Folder Include="ViewModels%28Логика взаимодействия View с Models%29\" />
+    <Folder Include="Services%28Данные с удаленного сервера%29\" />
+    <Folder Include="Infrastructure%28Доп. Инструментарий%29\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views%28Окна%29\Windows\MainPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

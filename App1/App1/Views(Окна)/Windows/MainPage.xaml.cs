@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace App1
+namespace App1.Views_Окна_.Windows
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Page1 : ContentPage
+    public partial class MainPage : ContentPage
     {
-        public Page1()
+        public MainPage()
         {
             InitializeComponent();
         }
