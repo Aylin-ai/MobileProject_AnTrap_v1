@@ -1,7 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:App1.ViewModels_Логика_взаимодействия_View_с_Models_"
              x:Class="App1.Views_Окна_.Windows.MainPage">
+    <ContentPage.BindingContext>
+        <vm:MainPageViewModel/>
+    </ContentPage.BindingContext>
     <ContentPage.Resources>
         <Style TargetType="Button">
             <Setter Property="Margin" Value="20"/>
@@ -13,7 +17,8 @@
                  VerticalOptions="Fill">
         <Button BackgroundColor="#360E56"
                 Text="Пользователь"
-                CornerRadius="50"/>
+                CornerRadius="50"
+                Command="{Binding cmdUserInfo}"/>
         <Button BackgroundColor="#4A0707"
                 Text="Аниме"
                 CornerRadius="20" HeightRequest="130"/>
