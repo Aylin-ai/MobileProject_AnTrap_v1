@@ -29,6 +29,7 @@ namespace App1.ViewModels_Логика_взаимодействия_View_с_Mode
 
 
         #region Команда перехода на страницу с данными о пользователе
+
         /// <summary>
         /// Команда перехода на страницу с данными о пользователе
         /// </summary>
@@ -44,6 +45,7 @@ namespace App1.ViewModels_Логика_взаимодействия_View_с_Mode
         }
 
         private bool CanUserInfoCommandExecute(object obj) => true;
+
         #endregion
 
 

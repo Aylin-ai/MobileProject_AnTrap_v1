@@ -16,14 +16,20 @@
     <ContentPage.Content>
         <StackLayout BackgroundColor="Black">
             <Button Text="Начальное меню" Margin="0" BackgroundColor="#360E56"
-                    CornerRadius="0"/>
-            <Image Source="/Resources/drawable/Avat.png" Margin="20"/>
+                    CornerRadius="0" Command="{Binding MainPageCommand}"/>
+            <ImageButton Source="{Binding ImageLink}" Margin="20"
+                         Command="{Binding ChangeAvatCommand}"/>
+            
             <Frame BackgroundColor="#360E56" Margin="60, 10" Padding="0"
                    CornerRadius="11">
                 <Entry FontSize="20" Margin="5, 0"
                        TextColor="White" HorizontalTextAlignment="Center"
-                       Text="{Binding UserName, UpdateSourceEventName=PropertyChanged}"/>
+                       Text="{Binding UserName, Mode=TwoWay}"/>
             </Frame>
+
+            <Button Text="Подтвердить" Margin="0" BackgroundColor="#360E56"
+                    CornerRadius="0" VerticalOptions="EndAndExpand"
+                    Command="{Binding ConfirmCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
