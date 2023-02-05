@@ -1,12 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:App1.ViewModels_Логика_взаимодействия_View_с_Models_"
              x:Class="App1.Views_Окна_.Windows.UserPage">
+    <ContentPage.BindingContext>
+        <vm:UserPageViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="15"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="TextColor" Value="White"/>
+        </Style>
+    </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout BackgroundColor="Black">
+            <Button Text="Начальное меню" Margin="0" BackgroundColor="#360E56"
+                    CornerRadius="0"/>
+            <Image Source="/Resources/drawable/Avat.png" Margin="20"/>
+            <Frame BackgroundColor="#360E56" Margin="60, 10" Padding="0"
+                   CornerRadius="11">
+                <Entry FontSize="20" Margin="5, 0"
+                       TextColor="White" HorizontalTextAlignment="Center"
+                       Text="{Binding UserName, UpdateSourceEventName=PropertyChanged}"/>
+            </Frame>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

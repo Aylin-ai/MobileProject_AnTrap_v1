@@ -18,7 +18,7 @@
         <Button BackgroundColor="#360E56"
                 Text="Пользователь"
                 CornerRadius="50"
-                Command="{Binding cmdUserInfo}"/>
+                Command="{Binding UserInfoCommand}"/>
         <Button BackgroundColor="#4A0707"
                 Text="Аниме"
                 CornerRadius="20" HeightRequest="130"/>

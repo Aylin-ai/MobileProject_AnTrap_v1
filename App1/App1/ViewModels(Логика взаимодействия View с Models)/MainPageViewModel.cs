@@ -19,16 +19,34 @@ namespace App1.ViewModels_Логика_взаимодействия_View_с_Mode
         }
         #endregion
 
-        public Command cmdUserInfo { get; set; }
 
         public MainPageViewModel()
         {
-            cmdUserInfo = new Command(gotoNextPage);
+            UserInfoCommand = new Command(OnUserInfoCommandExecuted);
         }
 
-        private void gotoNextPage()
+        #region Команды
+
+
+        #region Команда перехода на страницу с данными о пользователе
+        /// <summary>
+        /// Команда перехода на страницу с данными о пользователе
+        /// </summary>
+        public Command UserInfoCommand { get; }
+
+        /// <summary>
+        /// Команда перехода на страницу с данными о пользователе
+        /// </summary>
+        /// <param name="obj"></param>
+        private void OnUserInfoCommandExecuted(object obj)
         {
             App.Current.MainPage.Navigation.PushAsync(new UserPage());
         }
+
+        private bool CanUserInfoCommandExecute(object obj) => true;
+        #endregion
+
+
+        #endregion
     }
 }

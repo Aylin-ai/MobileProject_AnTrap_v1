@@ -20,6 +20,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Media\Images\UserPage\Avat.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Media\Images\UserPage\Avat.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
   </ItemGroup>
