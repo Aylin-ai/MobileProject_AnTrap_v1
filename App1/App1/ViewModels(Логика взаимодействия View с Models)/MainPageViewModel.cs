@@ -1,5 +1,6 @@
 ﻿using App1.ViewModels_Логика_взаимодействия_View_с_Models_.Base;
 using Xamarin.Forms;
+using App1.Views_Окна_.Windows;
 
 namespace App1.ViewModels_Логика_взаимодействия_View_с_Models_
 {
@@ -25,5 +26,9 @@ namespace App1.ViewModels_Логика_взаимодействия_View_с_Mode
             cmdUserInfo = new Command(gotoNextPage);
         }
 
+        private void gotoNextPage()
+        {
+            App.Current.MainPage.Navigation.PushAsync(new UserPage());
+        }
     }
 }
