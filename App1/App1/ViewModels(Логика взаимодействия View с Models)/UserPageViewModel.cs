@@ -79,7 +79,7 @@ namespace App1.ViewModels_Логика_взаимодействия_View_с_Mode
 
         public void OnChangeAvatCommandExecute(object obj)
         {
-
+            Console.WriteLine("Еще не реализовано");
         }
 
         public bool CanChangeAvatCommandExecute(Object obj) => true;
