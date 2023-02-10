@@ -47,9 +47,9 @@
         </Tab>
 
         <Tab Title="Совет">
-            <ShellContent Title="Аниме" ContentTemplate="{DataTemplate anime:AllAnime}"/>
-            <ShellContent Title="Манга" ContentTemplate="{DataTemplate manga:AllManga}"/>
-            <ShellContent Title="Книги" ContentTemplate="{DataTemplate book:AllBooks}"/>
+            <ShellContent Title="Аниме" ContentTemplate="{DataTemplate anime:AnimeRecommendation}"/>
+            <ShellContent Title="Манга" ContentTemplate="{DataTemplate manga:MangaRecommendation}"/>
+            <ShellContent Title="Книги" ContentTemplate="{DataTemplate book:BookRecommendation}"/>
         </Tab>
 
         <Tab Title="Настройки">

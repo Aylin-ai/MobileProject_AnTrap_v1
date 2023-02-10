@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:vm="clr-namespace:App1.ViewModels_Логика_взаимодействия_View_с_Models_.Аниме" x:DataType="vm:AnimeListViewModel"
-             x:Class="App1.Views_Окна_.Windows.Аниме.AnimeList"
+             xmlns:vm="clr-namespace:App1.ViewModels_Логика_взаимодействия_View_с_Models_.Аниме" x:DataType="vm:AnimeRecommendationViewModel"
+             x:Class="App1.Views_Окна_.Windows.Аниме.AnimeRecommendation"
              BackgroundColor="Black">
     <ContentPage.BindingContext>
-        <vm:AnimeListViewModel/>
+        <vm:AnimeRecommendationViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>

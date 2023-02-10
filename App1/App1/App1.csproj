@@ -55,7 +55,13 @@
     <EmbeddedResource Update="Views%28Окна%29\Windows\Аниме\AnimeList.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views%28Окна%29\Windows\Аниме\AnimeRecommendation.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views%28Окна%29\Windows\Книги\AllBooks.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views%28Окна%29\Windows\Книги\BookRecommendation.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views%28Окна%29\Windows\Книги\BooksList.xaml">
@@ -65,6 +71,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views%28Окна%29\Windows\Манга\MangaList.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views%28Окна%29\Windows\Манга\MangaRecommendation.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views%28Окна%29\Windows\Настройки\RecommendationsSettings.xaml">

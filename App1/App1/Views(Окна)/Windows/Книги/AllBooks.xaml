@@ -1,8 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:App1.ViewModels_Логика_взаимодействия_View_с_Models_.Книги" x:DataType="vm:AllBooksViewModel"
              x:Class="App1.Views_Окна_.Windows.Книги.AllBooks"
              BackgroundColor="Black">
+    <ContentPage.BindingContext>
+        <vm:AllBooksViewModel/>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>
             

@@ -1,8 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:App1.ViewModels_Логика_взаимодействия_View_с_Models_.Аниме" x:DataType="vm:AllAnimeViewModel"
              x:Class="App1.Views_Окна_.Windows.Аниме.AllAnime"
              BackgroundColor="Black">
+    <ContentPage.BindingContext>
+        <vm:AllAnimeViewModel/>
+    </ContentPage.BindingContext>
     <ContentPage.Resources>
         <Style TargetType="Label">
             <Setter Property="FontSize" Value="16"/>
@@ -13,7 +17,7 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
-                <Frame Margin="15" Padding="0" CornerRadius="20">
+                <Frame Margin="15" Padding="0" CornerRadius="20" BackgroundColor="#C0C0C0">
                     <StackLayout>
                         <StackLayout Margin="10, 10, 10, 0" Orientation="Horizontal">
                             <Image Source="/Resources/drawable/Avat.png"
