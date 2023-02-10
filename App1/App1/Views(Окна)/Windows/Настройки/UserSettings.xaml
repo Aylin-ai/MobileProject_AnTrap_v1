@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:App1.ViewModels_Логика_взаимодействия_View_с_Models_"
+             x:Class="App1.Views_Окна_.Windows.Настройки.UserSettings"
+             BackgroundColor="Black">
+    <ContentPage.BindingContext>
+        <vm:UserPageViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="TextColor" Value="White"/>
+        </Style>
+    </ContentPage.Resources>
+    <StackLayout BackgroundColor="Black">
+    <ImageButton Source="{Binding ImageLink}" Margin="30"
+                 Command="{Binding ChangeAvatCommand}"/>
+
+    <Frame BackgroundColor="#360E56" Margin="0" Padding="0"
+           CornerRadius="11">
+    <Entry FontSize="20" Margin="5, 0"
+           TextColor="White" HorizontalTextAlignment="Center"
+           Text="{Binding UserName, Mode=TwoWay}"/>
+    </Frame>
+
+    <Button Margin="0, 10" Text="Подтвердить" BackgroundColor="#360E56"
+            CornerRadius="30" HorizontalOptions="Center"
+            Command="{Binding ConfirmCommand}"/>
+    </StackLayout>
+</ContentPage>

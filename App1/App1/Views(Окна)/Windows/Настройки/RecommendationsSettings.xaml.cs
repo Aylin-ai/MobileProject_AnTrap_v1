@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace App1.Views_Окна_.Windows
+namespace App1.Views_Окна_.Windows.Настройки
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Settings : ContentPage
+    public partial class RecommendationsSettings : ContentPage
     {
-        public Settings()
+        public RecommendationsSettings()
         {
             InitializeComponent();
         }

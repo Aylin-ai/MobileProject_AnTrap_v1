@@ -5,6 +5,7 @@
        xmlns:anime="clr-namespace:App1.Views_Окна_.Windows.Аниме"
        xmlns:manga="clr-namespace:App1.Views_Окна_.Windows.Манга"
        xmlns:book="clr-namespace:App1.Views_Окна_.Windows.Книги"
+       xmlns:setting="clr-namespace:App1.Views_Окна_.Windows.Настройки"
        Title="Test"
        x:Class="App1.AppShell">
 
@@ -34,9 +35,9 @@
 
     <TabBar>
         <Tab Title="Список">
-            <ShellContent Title="Аниме" ContentTemplate="{DataTemplate anime:MainAnimePage}"/>
-            <ShellContent Title="Манга" ContentTemplate="{DataTemplate manga:MainMangaPage}"/>
-            <ShellContent Title="Книги" ContentTemplate="{DataTemplate book:MainBookPage}"/>
+            <ShellContent Title="Аниме" ContentTemplate="{DataTemplate anime:AnimeList}"/>
+            <ShellContent Title="Манга" ContentTemplate="{DataTemplate manga:MangaList}"/>
+            <ShellContent Title="Книги" ContentTemplate="{DataTemplate book:BooksList}"/>
         </Tab>
 
         <Tab Title="Всё">
@@ -51,7 +52,10 @@
             <ShellContent Title="Книги" ContentTemplate="{DataTemplate book:AllBooks}"/>
         </Tab>
 
-        <ShellContent Title="Настройки" ContentTemplate="{DataTemplate local:Settings}"/>
+        <Tab Title="Настройки">
+            <ShellContent Title="Профиль" ContentTemplate="{DataTemplate setting:UserSettings}"/>
+            <ShellContent Title="Рекомендации" ContentTemplate="{DataTemplate setting:RecommendationsSettings}"/>
+        </Tab>
     </TabBar>
 
     <!--
