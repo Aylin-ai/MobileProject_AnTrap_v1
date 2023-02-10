@@ -3,9 +3,37 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App1.Views_Окна_.Windows.Аниме.AllAnime"
              BackgroundColor="Black">
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="Margin" Value="0"/>
+        </Style>
+    </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout>
-            
-        </StackLayout>
+        <ScrollView>
+            <StackLayout>
+                <Frame Margin="15" Padding="0" CornerRadius="20">
+                    <StackLayout>
+                        <StackLayout Margin="10, 10, 10, 0" Orientation="Horizontal">
+                            <Image Source="/Resources/drawable/Avat.png"
+                               WidthRequest="100"/>
+                            <StackLayout>
+                                <Label Text="Перерождение Дяди [08 из 13]"/>
+                                <Label Text="Жанры: комедия, фентези"/>
+                                <Label Text="Оценка: 4.7/5" VerticalOptions="EndAndExpand"/>
+                            </StackLayout>
+                        </StackLayout>
+                        <Picker Margin="10, 0" FontSize="16">
+                            <Picker.Items>
+                                <x:String>Выбрать</x:String>
+                                <x:String>Смотрю</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </StackLayout>
+                </Frame>
+
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
