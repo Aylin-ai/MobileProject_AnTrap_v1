@@ -15,7 +15,6 @@ namespace App1.Views_Окна_.Windows
         public MainPage()
         {
             InitializeComponent();
-            NavigationPage.SetHasNavigationBar(this, false);
         }
     }
 }

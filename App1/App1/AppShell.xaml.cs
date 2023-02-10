@@ -15,6 +15,7 @@ namespace App1
         public AppShell()
         {
             InitializeComponent();
+            AppShell.SetNavBarIsVisible(this, false);
         }
     }
 }

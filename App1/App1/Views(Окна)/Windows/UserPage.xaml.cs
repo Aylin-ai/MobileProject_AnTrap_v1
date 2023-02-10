@@ -14,8 +14,8 @@ namespace App1.Views_Окна_.Windows
     {
         public UserPage()
         {
-            NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
+            AppShell.SetNavBarIsVisible(this, false);
         }
     }
 }

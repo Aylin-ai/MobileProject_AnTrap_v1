@@ -15,7 +15,6 @@ namespace App1.Views_Окна_.Windows.Аниме
         public MainAnimePage()
         {
             InitializeComponent();
-            NavigationPage.SetHasNavigationBar(this, false);
         }
     }
 }
