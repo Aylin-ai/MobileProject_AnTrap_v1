@@ -1,11 +1,14 @@
 ﻿using App1.ViewModels_Логика_взаимодействия_View_с_Models_.Base;
 using Xamarin.Forms;
 using App1.Views_Окна_.Windows;
+using System.Windows.Input;
+using App1.Views_Окна_.Windows.Аниме;
 
 namespace App1.ViewModels_Логика_взаимодействия_View_с_Models_
 {
     internal class MainPageViewModel: ViewModel
     {
+
         #region Заголовок страницы
         private string _Title = "Главная страница";
 
@@ -20,11 +23,6 @@ namespace App1.ViewModels_Логика_взаимодействия_View_с_Mode
         #endregion
 
 
-        public MainPageViewModel()
-        {
-            UserInfoCommand = new Command(OnUserInfoCommandExecuted);
-        }
-
         #region Команды
 
 
@@ -33,12 +31,21 @@ namespace App1.ViewModels_Логика_взаимодействия_View_с_Mode
         /// <summary>
         /// Команда перехода на страницу с данными о пользователе
         /// </summary>
-        public Command UserInfoCommand { get; }
+        private Command userInfoCommand;
 
-        /// <summary>
-        /// Команда перехода на страницу с данными о пользователе
-        /// </summary>
-        /// <param name="obj"></param>
+
+        public ICommand UserInfoCommand
+        {
+            get
+            {
+                if (userInfoCommand == null)
+                {
+                    userInfoCommand = new Command(OnUserInfoCommandExecuted);
+                }
+
+                return userInfoCommand;
+            }
+        }
         private void OnUserInfoCommandExecuted(object obj)
         {
             App.Current.MainPage.Navigation.PushAsync(new UserPage());
@@ -48,7 +55,31 @@ namespace App1.ViewModels_Логика_взаимодействия_View_с_Mode
 
         #endregion
 
+        #region Команда перехода на главную страницу аниме
+
+        private Command mainAnimePageCommand;
+
+        public ICommand MainAnimePageCommand
+        {
+            get
+            {
+                if (mainAnimePageCommand == null)
+                {
+                    mainAnimePageCommand = new Command(OnMainAnimePageCommandExecuted);
+                }
+
+                return mainAnimePageCommand;
+            }
+        }
+
+        private void OnMainAnimePageCommandExecuted(object obj)
+        {
+            App.Current.MainPage.Navigation.PushAsync(new MainAnimePage());
+        }
 
         #endregion
+
+        #endregion
+
     }
 }

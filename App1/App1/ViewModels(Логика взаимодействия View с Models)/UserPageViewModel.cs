@@ -4,17 +4,13 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using App1.Views_Окна_.Windows;
+using System.Windows.Input;
+using Xamarin.Essentials;
 
 namespace App1.ViewModels_Логика_взаимодействия_View_с_Models_
 {
     internal class UserPageViewModel : ViewModel
     {
-        public UserPageViewModel()
-        {
-            MainPageCommand = new Command(OnMainPageCommandExecuted);
-            ConfirmCommand = new Command(OnConfirmCommandExecute);
-            ChangeAvatCommand = new Command(OnChangeAvatCommandExecute);
-        }
 
         #region Имя пользователя
 
@@ -44,12 +40,26 @@ namespace App1.ViewModels_Логика_взаимодействия_View_с_Mode
 
         #endregion
 
+
         #region Команды
 
 
         #region Команда перехода к начальному экрану
 
-        public Command MainPageCommand { get; }
+        public Command mainPageCommand;
+
+        public ICommand MainPageCommand
+        {
+            get
+            {
+                if (mainPageCommand == null)
+                {
+                    mainPageCommand = new Command(OnMainPageCommandExecuted);
+                }
+
+                return mainPageCommand;
+            }
+        }
 
         private void OnMainPageCommandExecuted(object obj)
         {
@@ -62,7 +72,20 @@ namespace App1.ViewModels_Логика_взаимодействия_View_с_Mode
 
         #region Команда подтверждения изменений
 
-        public Command ConfirmCommand { get; }
+        public Command confirmCommand;
+
+        public ICommand ConfirmCommand
+        {
+            get
+            {
+                if (confirmCommand == null)
+                {
+                    confirmCommand = new Command(OnConfirmCommandExecute);
+                }
+
+                return confirmCommand;
+            }
+        }
 
         public void OnConfirmCommandExecute(object obj)
         {
@@ -75,11 +98,29 @@ namespace App1.ViewModels_Логика_взаимодействия_View_с_Mode
 
         #region Команда смены аватарки пользователя
 
-        public Command ChangeAvatCommand { get; }
+        public Command changeAvatCommand;
+
+        public ICommand ChangeAvatCommand
+        {
+            get
+            {
+                if (changeAvatCommand == null)
+                {
+                    changeAvatCommand = new Command(OnChangeAvatCommandExecute);
+                }
+
+                return changeAvatCommand;
+            }
+        }
 
         public void OnChangeAvatCommandExecute(object obj)
         {
-            Console.WriteLine("Еще не реализовано");
+            var options = new PickOptions
+            {
+                PickerTitle = "Выберите изображение",
+                FileTypes = FilePickerFileType.Images
+            };
+            FilePicker.PickAsync(options);
         }
 
         public bool CanChangeAvatCommandExecute(Object obj) => true;
@@ -88,5 +129,6 @@ namespace App1.ViewModels_Логика_взаимодействия_View_с_Mode
 
 
         #endregion
+
     }
 }

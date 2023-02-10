@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:App1.Views_Окна_.Windows"
+       xmlns:anime="clr-namespace:App1.Views_Окна_.Windows.Аниме"
+       xmlns:manga="clr-namespace:App1.Views_Окна_.Windows.Манга"
+       xmlns:book="clr-namespace:App1.Views_Окна_.Windows.Книги"
+       Title="Test"
+       x:Class="App1.AppShell">
+
+    <!--
+        The overall app visual hierarchy is defined here, along with navigation.
+    
+        https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/
+    -->
+
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="baseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="#360E56" />
+                <Setter Property="Shell.ForegroundColor" Value="White" />
+                <Setter Property="Shell.TitleColor" Value="White" />
+                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="#360E56" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="White"/>
+            </Style>
+            <Style TargetType="TabBar" BasedOn="{StaticResource baseStyle}" />
+            <Style TargetType="FlyoutItem" BasedOn="{StaticResource baseStyle}" />
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <TabBar>
+        <Tab Title="Список">
+            <ShellContent Title="Аниме" ContentTemplate="{DataTemplate anime:MainAnimePage}"/>
+            <ShellContent Title="Манга" ContentTemplate="{DataTemplate manga:MainMangaPage}"/>
+            <ShellContent Title="Книги" ContentTemplate="{DataTemplate book:MainBookPage}"/>
+        </Tab>
+
+        <Tab Title="Всё">
+            <ShellContent Title="Аниме" ContentTemplate="{DataTemplate anime:AllAnime}"/>
+            <ShellContent Title="Манга" ContentTemplate="{DataTemplate manga:AllManga}"/>
+            <ShellContent Title="Книги" ContentTemplate="{DataTemplate book:AllBooks}"/>
+        </Tab>
+
+        <Tab Title="Совет">
+            <ShellContent Title="Аниме" ContentTemplate="{DataTemplate anime:AllAnime}"/>
+            <ShellContent Title="Манга" ContentTemplate="{DataTemplate manga:AllManga}"/>
+            <ShellContent Title="Книги" ContentTemplate="{DataTemplate book:AllBooks}"/>
+        </Tab>
+
+        <ShellContent Title="Настройки" ContentTemplate="{DataTemplate local:Settings}"/>
+    </TabBar>
+
+    <!--
+        If you would like to navigate to this content you can do so by calling
+        await Shell.Current.GoToAsync("//LoginPage");
+    -->
+
+
+</Shell>

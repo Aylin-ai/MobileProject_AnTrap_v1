@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:App1.ViewModels_Логика_взаимодействия_View_с_Models_"
-             x:Class="App1.Views_Окна_.Windows.MainPage">
+             x:Class="App1.Views_Окна_.Windows.MainPage"
+             BackgroundColor="Black">
     <ContentPage.BindingContext>
         <vm:MainPageViewModel/>
     </ContentPage.BindingContext>
@@ -13,24 +14,17 @@
             <Setter Property="TextColor" Value="White"/>
         </Style>
     </ContentPage.Resources>
-    <StackLayout BackgroundColor="Black" Orientation="Vertical"
-                 VerticalOptions="Fill">
-        <Button BackgroundColor="#360E56"
-                Text="Пользователь"
-                CornerRadius="50"
-                Command="{Binding UserInfoCommand}"/>
+    <StackLayout Orientation="Vertical"
+                 VerticalOptions="CenterAndExpand">
         <Button BackgroundColor="#4A0707"
                 Text="Аниме"
-                CornerRadius="20" HeightRequest="130"/>
+                CornerRadius="20" HeightRequest="130"
+                Command="{Binding MainAnimePageCommand}"/>
         <Button BackgroundColor="#562205"
                 Text="Манга"
                 CornerRadius="20" HeightRequest="130"/>
         <Button BackgroundColor="#09364F"
                 Text="Книги"
                 CornerRadius="20" HeightRequest="130"/>
-        <Button BackgroundColor="#360E56" Text="Настройки"
-                FontSize="20" TextColor="White"
-                VerticalOptions="EndAndExpand"
-                Margin="0"/>
     </StackLayout>
 </ContentPage>
