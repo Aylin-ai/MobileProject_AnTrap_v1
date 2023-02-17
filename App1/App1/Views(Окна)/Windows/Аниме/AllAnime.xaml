@@ -16,7 +16,7 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout>
+            <StackLayout x:Name="stack">
                 <Frame Margin="15" Padding="0" CornerRadius="20" BackgroundColor="#C0C0C0">
                     <StackLayout>
                         <StackLayout Margin="10, 10, 10, 0" Orientation="Horizontal">
@@ -46,6 +46,8 @@
                     </StackLayout>
                 </Frame>
 
+                
+                
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
