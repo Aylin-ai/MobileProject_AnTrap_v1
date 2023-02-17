@@ -21,10 +21,15 @@
 
   <ItemGroup>
     <None Remove="Media\Images\UserPage\Avat.jpg" />
+    <None Remove="Services\MaterialIcons-Regular.ttf" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="Media\Images\UserPage\Avat.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Services\MaterialIcons-Regular.ttf" />
   </ItemGroup>
 
   <ItemGroup>
@@ -36,7 +41,6 @@
     <Folder Include="Data%28Связь с бд%29\" />
     <Folder Include="Infrastructure\Commands\" />
     <Folder Include="Models%28Бизнес-логика%29\" />
-    <Folder Include="Services%28Данные с удаленного сервера%29\" />
   </ItemGroup>
 
   <ItemGroup>

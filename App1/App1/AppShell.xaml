@@ -35,24 +35,48 @@
 
     <TabBar>
         <Tab Title="Список">
+            <Tab.Icon>
+                <FontImageSource FontFamily="Material"
+                                 Color="White"
+                                 Glyph="&#xe1db;">
+                </FontImageSource>
+            </Tab.Icon>
             <ShellContent Title="Аниме" ContentTemplate="{DataTemplate anime:AnimeList}"/>
             <ShellContent Title="Манга" ContentTemplate="{DataTemplate manga:MangaList}"/>
             <ShellContent Title="Книги" ContentTemplate="{DataTemplate book:BooksList}"/>
         </Tab>
 
         <Tab Title="Всё">
+            <Tab.Icon>
+                <FontImageSource FontFamily="Material"
+                                 Color="White"
+                                 Glyph="&#xe1bd;">
+                </FontImageSource>
+            </Tab.Icon>
             <ShellContent Title="Аниме" ContentTemplate="{DataTemplate anime:AllAnime}"/>
             <ShellContent Title="Манга" ContentTemplate="{DataTemplate manga:AllManga}"/>
             <ShellContent Title="Книги" ContentTemplate="{DataTemplate book:AllBooks}"/>
         </Tab>
 
         <Tab Title="Совет">
+            <Tab.Icon>
+                <FontImageSource FontFamily="Material"
+                                 Color="White"
+                                 Glyph="&#xe935;">
+                </FontImageSource>
+            </Tab.Icon>
             <ShellContent Title="Аниме" ContentTemplate="{DataTemplate anime:AnimeRecommendation}"/>
             <ShellContent Title="Манга" ContentTemplate="{DataTemplate manga:MangaRecommendation}"/>
             <ShellContent Title="Книги" ContentTemplate="{DataTemplate book:BookRecommendation}"/>
         </Tab>
 
         <Tab Title="Настройки">
+            <Tab.Icon>
+                <FontImageSource FontFamily="Material"
+                                 Color="White"
+                                 Glyph="&#xe8b8;">
+                </FontImageSource>
+            </Tab.Icon>
             <ShellContent Title="Профиль" ContentTemplate="{DataTemplate setting:UserSettings}"/>
             <ShellContent Title="Рекомендации" ContentTemplate="{DataTemplate setting:RecommendationsSettings}"/>
         </Tab>
