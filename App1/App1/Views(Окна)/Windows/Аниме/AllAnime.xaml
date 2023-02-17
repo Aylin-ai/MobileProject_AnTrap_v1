@@ -23,9 +23,18 @@
                             <Image Source="/Resources/drawable/Avat.png"
                                WidthRequest="100"/>
                             <StackLayout>
-                                <Label Text="Перерождение Дяди [08 из 13]"/>
-                                <Label Text="Жанры: комедия, фентези"/>
-                                <Label Text="Оценка: 4.7/5" VerticalOptions="EndAndExpand"/>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Перерождение Дяди"/>
+                                    <Label Text="[08 из 13]"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Жанры:"/>
+                                    <Label Text="комедия, фентези"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
+                                    <Label Text="Оценка:"/>
+                                    <Label Text="4.7/5"/>
+                                </StackLayout>
                             </StackLayout>
                         </StackLayout>
                         <Picker Margin="10, 0" FontSize="16">
