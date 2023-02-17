@@ -7,5 +7,13 @@ namespace App1.ViewModels_Логика_взаимодействия_View_с_Mode
 {
     internal class RecommendationsSettingsViewModel : ViewModel
     {
+
+        #region Коллекция страниц аниме, манги и книг
+
+
+
+        #endregion
+
+
     }
 }
