@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:App1.ViewModels_Логика_взаимодействия_View_с_Models_.Аниме" x:DataType="vm:AnimeViewModel"
+             xmlns:model="clr-namespace:App1.Models_Бизнес_логика_"  
+             x:Class="App1.Views_Окна_.Windows.Аниме.Anime"
+             BackgroundColor="Black">
+    <ContentPage.BindingContext>
+        <vm:AnimeViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="#9FA1A3"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+    </ContentPage.Resources>
+    <ScrollView>
+        <StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Image Source="{Binding ImageLink}" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand"
+                       Margin="10" HeightRequest="140"/>
+
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal" Margin="5">
+                        <Label Text="Перерождение Дяди"/>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Страна создания:"/>
+                <Label Text="Япония"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Количество серий:"/>
+                <Label Text="20 эп., 25 мин"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Рейтинг:"/>
+                <Label Text="4.1/5"/>
+            </StackLayout>
+
+            <Label Text="Описание"/>
+            <Label FontSize="16" Text="{Binding Synopsis}" FlowDirection="LeftToRight"/>
+
+            <Label Text="Даты выхода серий"/>
+            <StackLayout BindableLayout.ItemsSource="{Binding series}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout x:DataType="model:AnimeSeries">
+                            <StackLayout Orientation="Horizontal">
+                                <Label FontSize="18" Text="{Binding Number}"/>
+                                <Label FontSize="18" Text=": "/>
+                                <Label FontSize="18" Text="{Binding Date}"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+
+            <Label Text="Теги"/>
+            <FlexLayout BindableLayout.ItemsSource="{Binding Tags}" Direction="Row" Wrap="Wrap"
+                        VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand"
+                        JustifyContent="Start">
+                <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                        <Frame BackgroundColor="#8E485A" x:DataType="model:Tag"
+                                   CornerRadius="20" Padding="5">
+                            <StackLayout Orientation="Horizontal" Spacing="1">
+                                <Label TextColor="#E1607D" FontSize="16" Text="#" Margin="0"/>
+                                <Label TextColor="#E1607D" FontSize="16" Text="{Binding Name}" Margin="0"/>
+                            </StackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </FlexLayout>
+
+            <Label Text="Жанры"/>
+            <FlexLayout BindableLayout.ItemsSource="{Binding Genres}" Direction="Row" Wrap="Wrap"
+                        VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand"
+                        JustifyContent="Start">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BackgroundColor="#8E485A" x:DataType="model:Tag"
+                                   CornerRadius="20" Padding="5">
+                            <StackLayout Orientation="Horizontal" Spacing="1">
+                                <Label TextColor="#E1607D" FontSize="16" Text="#" Margin="0"/>
+                                <Label TextColor="#E1607D" FontSize="16" Text="{Binding Name}" Margin="0"/>
+                            </StackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </FlexLayout>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
