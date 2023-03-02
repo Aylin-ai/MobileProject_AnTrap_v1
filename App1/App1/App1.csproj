@@ -83,6 +83,9 @@
     <EmbeddedResource Update="Views%28Окна%29\Windows\Манга\MangaRecommendation.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views%28Окна%29\Windows\Настройки\EditUser.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views%28Окна%29\Windows\Настройки\RecommendationsSettings.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

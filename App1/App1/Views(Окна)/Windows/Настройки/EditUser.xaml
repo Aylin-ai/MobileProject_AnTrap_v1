@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:App1.ViewModels_Логика_взаимодействия_View_с_Models_.Настройки" x:DataType="vm:EditUserViewModel"
+             x:Class="App1.Views_Окна_.Windows.Настройки.EditUser"
+             BackgroundColor="Black">
+    <ContentPage.BindingContext>
+        <vm:EditUserViewModel/>
+    </ContentPage.BindingContext>
+    <StackLayout>
+        
+        <StackLayout Orientation="Horizontal" BackgroundColor="#1D252A" VerticalOptions="Start">
+            <Label Text="Назад" TextColor="#9FA1A3" FontSize="20" FontAttributes="Bold"
+               Margin="10" HorizontalOptions="StartAndExpand">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ClosePageCommand}" />
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" Spacing="0">
+            <ImageButton Source="{Binding ImageLink}" Margin="20"
+                 Command="{Binding ChangeAvatCommand}"
+                     HeightRequest="100" CornerRadius="100" 
+                     BackgroundColor="Black"
+                     HorizontalOptions="StartAndExpand"/>
+            <Button Text="Сохранить" TextColor="#9FA1A3" BackgroundColor="#1D252A"
+                    FontSize="16" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
+                    CornerRadius="10"/>
+        </StackLayout>
+
+        <StackLayout Margin="10">
+            <Label Text="Логин" TextColor="#9FA1A3" Margin="5" FontSize="20"/>
+            <Frame BackgroundColor="#1D252A" Margin="0" Padding="0"
+           CornerRadius="11">
+                <Entry FontSize="20" Margin="5, 0"
+           TextColor="#9FA1A3" HorizontalTextAlignment="Center"
+           Text=""/>
+            </Frame>
+        </StackLayout>
+
+        <StackLayout Margin="10, 10, 10, 0">
+            <Label Text="Пароль" TextColor="#9FA1A3" Margin="5" FontSize="20"/>
+            <Frame BackgroundColor="#1D252A" Margin="0" Padding="0"
+           CornerRadius="11">
+                <Entry FontSize="20" Margin="5, 0"
+           TextColor="#9FA1A3" HorizontalTextAlignment="Center"
+           Text=""/>
+            </Frame>
+        </StackLayout>
+
+        <StackLayout Margin="10, 0">
+            <Label Text="Повторить пароль" TextColor="#9FA1A3" Margin="5" FontSize="20"/>
+            <Frame BackgroundColor="#1D252A" Margin="0" Padding="0"
+           CornerRadius="11">
+                <Entry FontSize="20" Margin="5, 0"
+           TextColor="#9FA1A3" HorizontalTextAlignment="Center"
+           Text=""/>
+            </Frame>
+        </StackLayout>
+
+        <StackLayout Margin="10">
+            <Label Text="Email" TextColor="#9FA1A3" Margin="5" FontSize="20"/>
+            <Frame BackgroundColor="#1D252A" Margin="0" Padding="0"
+           CornerRadius="11">
+                <Entry FontSize="20" Margin="5, 0"
+           TextColor="#9FA1A3" HorizontalTextAlignment="Center"
+           Text=""/>
+            </Frame>
+        </StackLayout>
+
+    </StackLayout>
+
+</ContentPage>

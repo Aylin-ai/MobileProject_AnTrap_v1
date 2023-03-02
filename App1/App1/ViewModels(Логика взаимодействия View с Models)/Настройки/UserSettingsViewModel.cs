@@ -1,5 +1,6 @@
 ﻿using App1.ViewModels_Логика_взаимодействия_View_с_Models_.Base;
 using App1.Views_Окна_.Windows;
+using App1.Views_Окна_.Windows.Настройки;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -96,34 +97,29 @@ namespace App1.ViewModels_Логика_взаимодействия_View_с_Mode
 
         #endregion
 
-        #region Команда смены аватарки пользователя
+        #region Команда перехода к странице редактирования пользователя
 
-        public Command changeAvatCommand;
+        public Command editProfileCommand;
 
-        public ICommand ChangeAvatCommand
+        public ICommand EditProfileCommand
         {
             get
             {
-                if (changeAvatCommand == null)
+                if (editProfileCommand == null)
                 {
-                    changeAvatCommand = new Command(OnChangeAvatCommandExecute);
+                    editProfileCommand = new Command(OnEditProfileCommandExecute);
                 }
 
-                return changeAvatCommand;
+                return editProfileCommand;
             }
         }
 
-        public void OnChangeAvatCommandExecute(object obj)
+        public void OnEditProfileCommandExecute(object obj)
         {
-            var options = new PickOptions
-            {
-                PickerTitle = "Выберите изображение",
-                FileTypes = FilePickerFileType.Images
-            };
-            FilePicker.PickAsync(options);
+            Application.Current.MainPage.Navigation.PushAsync(new EditUser());
         }
 
-        public bool CanChangeAvatCommandExecute(Object obj) => true;
+        public bool CanEditProfileCommandExecute(Object obj) => true;
 
         #endregion
 
