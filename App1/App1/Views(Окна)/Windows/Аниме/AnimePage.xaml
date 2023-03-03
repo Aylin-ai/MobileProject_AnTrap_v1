@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:vm="clr-namespace:App1.ViewModels_Логика_взаимодействия_View_с_Models_.Аниме" x:DataType="vm:AnimeViewModel"
+             xmlns:vm="clr-namespace:App1.ViewModels_Логика_взаимодействия_View_с_Models_.Аниме" x:DataType="vm:AnimePageViewModel"
              xmlns:model="clr-namespace:App1.Models_Бизнес_логика_"  
-             x:Class="App1.Views_Окна_.Windows.Аниме.Anime"
+             x:Class="App1.Views_Окна_.Windows.Аниме.AnimePage"
              BackgroundColor="Black">
     <ContentPage.BindingContext>
-        <vm:AnimeViewModel/>
+        <vm:AnimePageViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.Resources>
         <Style TargetType="Label">

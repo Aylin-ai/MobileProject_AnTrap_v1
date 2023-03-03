@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace App1.Views_Окна_.Windows.Аниме
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Anime : ContentPage
+    public partial class AnimePage : ContentPage
     {
-        public Anime()
+        public AnimePage()
         {
             InitializeComponent();
             Shell.SetTabBarIsVisible(this, false);

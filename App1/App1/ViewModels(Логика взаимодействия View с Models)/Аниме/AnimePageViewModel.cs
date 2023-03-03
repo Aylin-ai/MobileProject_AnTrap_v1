@@ -7,7 +7,7 @@ using System.Text;
 
 namespace App1.ViewModels_Логика_взаимодействия_View_с_Models_.Аниме
 {
-    internal class AnimeViewModel : ViewModel
+    internal class AnimePageViewModel : ViewModel
     {
 
         #region Ссылка на аватарку
