@@ -16,44 +16,8 @@
         </Style>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <ScrollView>
-            <StackLayout BindableLayout.ItemsSource="{Binding AnimeNames}">
-            <BindableLayout.ItemTemplate>
-                <DataTemplate>
-                    <Frame Margin="15" Padding="0" CornerRadius="20" BackgroundColor="#1D252A"
-                                   x:DataType="model:AnimeTitle">
-                        <StackLayout>
-                            <StackLayout Margin="10, 10, 10, 0" Orientation="Horizontal">
-                                <StackLayout.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding AnimePageCommand}" x:DataType="vm:AllAnimeViewModel"/>
-                                </StackLayout.GestureRecognizers>
-                                <Image Source="{Binding ImageLink}"
-                               WidthRequest="100" x:DataType="vm:AnimePageViewModel"/>
-                                <StackLayout>
-                                    <StackLayout Orientation="Horizontal">
-                                        <Label Text="{Binding Name}"/>
-                                    </StackLayout>
-                                    <StackLayout Orientation="Horizontal">
-                                        <Label Text="Жанры:"/>
-                                        <Label Text="{Binding Kind}"/>
-                                    </StackLayout>
-                                    <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
-                                        <Label Text="Оценка:"/>
-                                        <Label Text="{Binding Score}"/>
-                                    </StackLayout>
-                                </StackLayout>
-                            </StackLayout>
-                            <Picker Margin="10, 0" FontSize="16" TextColor="#9FA1A3">
-                                <Picker.Items>
-                                    <x:String>Выбрать</x:String>
-                                    <x:String>Смотрю</x:String>
-                                </Picker.Items>
-                            </Picker>
-                        </StackLayout>
-                    </Frame>
-                </DataTemplate>
-            </BindableLayout.ItemTemplate>
-        </StackLayout>
-        </ScrollView>
+        <RefreshView IsRefreshing="{Binding IsRefreshing}" Command="{Binding GetAnimeCommand}">
+            <Label Text="{Binding AnimeName}"/>
+        </RefreshView>
     </ContentPage.Content>
 </ContentPage>

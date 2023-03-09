@@ -17,17 +17,29 @@ using Microsoft.Extensions.Logging;
 using System.Collections.ObjectModel;
 using ShikimoriSharp.Classes;
 using App1.Models_Бизнес_логика_;
+using System.Linq;
 
 namespace App1.ViewModels_Логика_взаимодействия_View_с_Models_.Аниме
 {
     internal class AllAnimeViewModel : ViewModel
     {
-        static readonly ILogger logger;
-        static public bool IsRefreshing { get; set; } = true;
+        static ILogger logger = null;
+        ShikimoriClient client = new(logger, new ClientSettings("AylinF",
+"bce7ad35b631293ff006be882496b29171792c8839b5094115268da7a97ca34c",
+"811459eada36b14ff0cf0cc353f8162e72a7d6e6c7930b647a5c587d1beffe68"));
+        public bool IsRefreshing { get; set; } = false;
+
+        #region Данные об аниме
+
+        public string AnimeName { get; set; } = "что-то";
+        public string AnimeScores { get; set; } = "";
+        public List<String> AnimeGenres { get; set; } = new List<String>() { "ПО", "лват" };
+
+        #endregion
 
         #region Список названий аниме
 
-        static public ObservableCollection<AnimeTitle> AnimeNames { get; set; }
+        static public List<AnimeTitle> animeNames { get; set; }
 
         #endregion
 
@@ -63,27 +75,35 @@ namespace App1.ViewModels_Логика_взаимодействия_View_с_Mode
             get
             {
                 if (getAnimeCommand == null)
-                    getAnimeCommand = new Command(OnGetAnimeCommandExecutedAsync);
+                    getAnimeCommand = new Command(async () =>
+                    {
+                        await OnGetAnimeCommandExecutedAsync();
+                        IsRefreshing = false;
+                    });
                 return getAnimeCommand;
             }
         }
 
-        private async void OnGetAnimeCommandExecutedAsync()
+        public async Task OnGetAnimeCommandExecutedAsync()
         {
-            ShikimoriClient client = new(logger, new ClientSettings("AylinF",
-"bce7ad35b631293ff006be882496b29171792c8839b5094115268da7a97ca34c",
-"811459eada36b14ff0cf0cc353f8162e72a7d6e6c7930b647a5c587d1beffe68"));
 
-            var token = client.Client.AuthorizationManager.GetAccessToken("Bf635DZ_ZDteNSfYY-mEyggZLRvl4OBsDq6ZYEL9hq0");
+            var token = client.Client.AuthorizationManager.GetAccessToken("VVEp6u4qNalmmJxIXLXUij-tNKdD_wZHAiUZmiB-TOk");
 
 
-            var search = await client.Animes.GetAnime();
-
-
-            for (int i = 0; i < 10; i++)
+            var search = await client.Animes.GetAnime(new AnimeRequestSettings()
             {
-                var anime = search[i];
-                AnimeNames.Add(new AnimeTitle() { Name = anime.Name, Kind = anime.Kind, Score = anime.Score});
+                search = "Lucky"
+            });
+
+            var id = search.First().Id;
+            var conan = await client.Animes.GetAnime(id);
+
+            AnimeName = conan.Name;
+
+            var genres = conan.Genres;
+            for (int i = 0; i < genres.Length; i++)
+            {
+                AnimeGenres.Add(genres[i].Name);
             }
         }
 
